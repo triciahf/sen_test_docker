@@ -1,0 +1,13 @@
+name: cicd
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  call-workflow-passing-data:
+    uses: triciahf/.github/.github/workflows/ci-build.yaml@main

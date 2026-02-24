@@ -1,0 +1,48 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+    - id: check-json
+    - id: forbid-submodules
+    - id: trailing-whitespace
+    - id: mixed-line-ending
+    - id: end-of-file-fixer
+    - id: check-symlinks
+  - repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: v21.1.8
+    hooks:
+    - id: clang-format
+      exclude: (components/explorer/src/imgui|components/explorer/src/implot)
+      types_or: [c++, c]  
+  - repo: https://github.com/cheshirekow/cmake-format-precommit
+    rev: v0.6.10
+    hooks:
+    - id: cmake-format
+    - id: cmake-lint
+  - repo: https://github.com/hukkin/mdformat.git
+    rev: 1.0.0
+    hooks:
+    - id: mdformat
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.38.0
+    hooks:
+    - id: yamllint
+      exclude: (.pre-commit-config.yaml)
+  - repo: https://github.com/triciahf/sen_pre_commit_hooks
+    rev: v0.0.29
+    hooks:
+    - id: check-headers
+      args:
+      - --fix
+      exclude: (__init__.py)
+    - id: check-yaml-format
+      exclude: (.pre-commit-config.yaml)
+    - id: check-tabs
+      exclude: (components/explorer/src/imgui|components/explorer/src/implot)
+    - id: check-file-name-casing
+    - id: check-method-endings
+    - id: check-stl-braces
+    - id: check-build-test
+    - id: check-stl-indentation
+    - id: check-stl-struct-spacing
+    - id: check-stl-comment-format
