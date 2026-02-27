@@ -1,5 +1,4 @@
-name: cicd
-
+name: CI Build
 on:
   push:
     branches:
@@ -8,18 +7,12 @@ on:
     branches:
       - main
 
-#jobs:
-  #call-workflow-passing-data:
-    #uses: triciahf/.github/.github/workflows/ci-build.yaml@test_pipeline
-
-
 jobs:
   build:
-    #runs-on: triciahf/sen-v1
-    runs-on: debian
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
     
       - name: echo
-        run: echo "hi again"    
+        run: echo "hi again"
