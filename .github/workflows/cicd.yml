@@ -8,6 +8,18 @@ on:
     branches:
       - main
 
+#jobs:
+  #call-workflow-passing-data:
+    #uses: triciahf/.github/.github/workflows/ci-build.yaml@test_pipeline
+
+
 jobs:
-  call-workflow-passing-data:
-    uses: triciahf/.github/.github/workflows/ci-build.yaml@test_pipeline
+  build:
+    #runs-on: triciahf/sen-v1
+    runs-on: debian
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+    
+      - name: echo
+        run: echo "hi again"    
